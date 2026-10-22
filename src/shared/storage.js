@@ -10,6 +10,7 @@ export const DEFAULT_SETTINGS = Object.freeze({
   cosmetic: true,        // hide ad containers with CSS
   annoyances: false,     // cookie banners, newsletter pop-ups
   youtube: false,        // auto-skip YouTube video ads (experimental)
+  theme: 'system',      // system, light or dark
   whitelist: [],         // sites where blocking is paused
   customBlockDomains: [],
   customSelectors: {}    // { "example.com": ["#selector", ...] }
@@ -27,6 +28,7 @@ export function sanitizeSettings(raw) {
   for (const k of ['enabled', 'cosmetic', 'annoyances', 'youtube']) {
     if (typeof raw[k] === 'boolean') out[k] = raw[k];
   }
+  if (['system', 'light', 'dark'].includes(raw.theme)) out.theme = raw.theme;
   if (isObj(raw.rulesets)) {
     for (const id of Object.keys(out.rulesets)) {
       if (typeof raw.rulesets[id] === 'boolean') out.rulesets[id] = raw.rulesets[id];

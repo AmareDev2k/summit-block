@@ -25,7 +25,7 @@ async function init() {
   host = getHostname(tab?.url || '');
   settings = await getSettings();
   applyTheme(settings.theme);
-  $('ver').textContent = chrome.runtime.getManifest().version;
+  $('ver').textContent = `v${chrome.runtime.getManifest().version}`;
   await render();
   bind();
 }

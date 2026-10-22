@@ -149,6 +149,7 @@ footer { color: var(--muted); text-align: center; font-size: 11px; }
 .theme-toggle:hover { color: var(--text); background: var(--surface); }
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #161a17;
   --surface: #202621;
   --surface-muted: #29332d;
@@ -158,4 +159,12 @@ footer { color: var(--muted); text-align: center; font-size: 11px; }
   --accent: #55b889;
   --accent-dark: #72c99e;
   --off: #69766d;
+}
+
+:root[data-theme="dark"] .caption,
+:root[data-theme="dark"] .stats span,
+:root[data-theme="dark"] .site-info span,
+:root[data-theme="dark"] footer,
+:root[data-theme="dark"] .support a {
+  color: #c2cec5;
 }

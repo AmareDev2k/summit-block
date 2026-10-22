@@ -192,6 +192,7 @@ code { padding: 1px 5px; border-radius: 4px; background: var(--surface-muted); f
 }
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #161a17;
   --surface: #202621;
   --surface-muted: #29332d;
@@ -203,4 +204,25 @@ code { padding: 1px 5px; border-radius: 4px; background: var(--surface-muted); f
   --danger: #e38b8b;
   --ok: #72c99e;
   --off: #69766d;
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .row,
+:root[data-theme="dark"] .row strong {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .row p,
+:root[data-theme="dark"] .theme-note,
+:root[data-theme="dark"] .lead {
+  color: #c2cec5;
+}
+
+:root[data-theme="dark"] .tag {
+  color: #d7f5e3;
+  background: #275c43;
+}
+
+:root[data-theme="dark"] input[type="text"] {
+  border-color: #65756a;
 }

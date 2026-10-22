@@ -8,6 +8,18 @@ const fmt = (n) => Number(n || 0).toLocaleString();
 
 let settings;
 
+function applyTheme(theme) {
+  const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  $('#themeToggle').textContent = dark ? 'Light mode' : 'Dark mode';
+  $('#themeToggle').setAttribute('aria-pressed', String(dark));
+}
+
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', async () => {
+  settings = await getSettings();
+  if (settings.theme === 'system') applyTheme(settings.theme);
+});
+
 const getPath = (o, p) => p.split('.').reduce((a, k) => a?.[k], o);
 function setPath(o, p, v) {
   const keys = p.split('.');
@@ -210,11 +222,16 @@ function initBackup() {
 
 async function init() {
   settings = await getSettings();
+  applyTheme(settings.theme);
   $('#ver').textContent = `v${chrome.runtime.getManifest().version}`;
   initNav();
   bindToggles();
   initForms();
   initBackup();
+  $('#themeToggle').addEventListener('click', async () => {
+    settings = await saveSettings({ ...settings, theme: document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark' });
+    applyTheme(settings.theme);
+  });
   renderLists();
   renderStats();
   loadCounts();

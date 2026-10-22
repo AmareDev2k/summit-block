@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summit Block</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <img src="../../assets/icons/icon-48.png" alt="" width="36" height="36">
+    <div class="titles">
+      <h1>Summit Block</h1>
+      <p id="status">Protection is on</p>
+    </div>
+    <button id="power" class="power" aria-label="Turn Summit Block on or off" aria-pressed="true" title="Turn on/off">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v9M6.4 6.6a8 8 0 1 0 11.2 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="big" id="pageCount">0</div>
+    <div class="caption">blocked on this page</div>
+  </section>
+
+  <section class="stats">
+    <div><strong id="totalCount">0</strong><span>total blocked</span></div>
+    <div><strong id="sinceDate">–</strong><span>counting since</span></div>
+  </section>
+
+  <section class="site">
+    <div class="site-info">
+      <strong id="siteName">–</strong>
+      <span id="siteHint">Blocking on this site</span>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="siteToggle" aria-label="Block on this site">
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="actions">
+    <button id="pick" class="btn">Block an element</button>
+    <button id="options" class="btn ghost">Settings</button>
+  </section>
+
+  <footer>v<span id="ver"></span> · 100% local · no tracking</footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

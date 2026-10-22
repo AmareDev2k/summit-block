@@ -26,7 +26,15 @@ function initNav() {
     const btn = e.target.closest('button[data-tab]');
     if (!btn) return;
     $$('#nav button').forEach((b) => b.classList.toggle('active', b === btn));
-    $$('.tab').forEach((t) => t.classList.toggle('active', t.id === `tab-${btn.dataset.tab}`));
+    $$('#nav button').forEach((b) => {
+      if (b === btn) b.setAttribute('aria-current', 'page');
+      else b.removeAttribute('aria-current');
+    });
+    $$('.tab').forEach((t) => {
+      const active = t.id === `tab-${btn.dataset.tab}`;
+      t.classList.toggle('active', active);
+      t.toggleAttribute('hidden', !active);
+    });
     if (btn.dataset.tab === 'backup') renderStats();
   });
 }

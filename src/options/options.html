@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summit Block – Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <img src="../../assets/icons/icon-48.png" alt="" width="40" height="40">
+      <div><h1>Summit Block</h1><span id="ver"></span></div>
+    </div>
+    <nav id="nav">
+      <button data-tab="general" class="active">General</button>
+      <button data-tab="filters">Filter lists</button>
+      <button data-tab="allowlist">Allowlist</button>
+      <button data-tab="custom">My filters</button>
+      <button data-tab="backup">Backup &amp; stats</button>
+      <button data-tab="about">About &amp; legal</button>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="tab-general" class="tab active">
+      <h2>General</h2>
+      <label class="row"><div><strong>Enable Summit Block</strong><p>Master switch for all blocking.</p></div><input type="checkbox" class="switch" data-key="enabled"></label>
+      <label class="row"><div><strong>Hide ad containers</strong><p>Removes empty ad boxes and placeholders left behind after blocking.</p></div><input type="checkbox" class="switch" data-key="cosmetic"></label>
+      <label class="row"><div><strong>Hide annoyances</strong><p>Cookie banners and newsletter pop-ups. Hiding a banner does not accept or reject cookies for you.</p></div><input type="checkbox" class="switch" data-key="annoyances"></label>
+      <label class="row"><div><strong>Skip YouTube video ads <span class="tag">experimental</span></strong><p>Clicks “Skip” and fast-forwards ads. May stop working whenever YouTube changes its player and may be against YouTube’s terms – use at your own risk.</p></div><input type="checkbox" class="switch" data-key="youtube"></label>
+    </section>
+
+    <section id="tab-filters" class="tab">
+      <h2>Filter lists</h2>
+      <p class="lead">Built-in lists compiled into Chrome’s native blocking engine. Nothing is downloaded at runtime.</p>
+      <label class="row"><div><strong>Ads &amp; popups</strong><p><span data-count="ads">…</span> rules · ad networks, ad servers, pop-under networks</p></div><input type="checkbox" class="switch" data-key="rulesets.ads"></label>
+      <label class="row"><div><strong>Trackers &amp; analytics</strong><p><span data-count="trackers">…</span> rules · cross-site trackers, session recorders, fingerprinting scripts</p></div><input type="checkbox" class="switch" data-key="rulesets.trackers"></label>
+      <label class="row"><div><strong>Malware &amp; crypto-miners</strong><p><span data-count="malware">…</span> rules · in-browser miners and known malicious hosts</p></div><input type="checkbox" class="switch" data-key="rulesets.malware"></label>
+    </section>
+
+    <section id="tab-allowlist" class="tab">
+      <h2>Allowlist</h2>
+      <p class="lead">Blocking is paused on these sites (and their subdomains). Reload the site after changing this list.</p>
+      <form class="inline" id="allowForm">
+        <input type="text" id="allowInput" placeholder="example.com" autocomplete="off" spellcheck="false" required>
+        <button class="btn" type="submit">Add</button>
+      </form>
+      <p class="error" id="allowError" role="alert"></p>
+      <ul class="list" id="allowList"></ul>
+    </section>
+
+    <section id="tab-custom" class="tab">
+      <h2>My filters</h2>
+      <h3>Blocked domains</h3>
+      <p class="lead">Every request to these domains (and subdomains) is blocked on all sites.</p>
+      <form class="inline" id="blockForm">
+        <input type="text" id="blockInput" placeholder="annoying-ads.example" autocomplete="off" spellcheck="false" required>
+        <button class="btn" type="submit">Block</button>
+      </form>
+      <p class="error" id="blockError" role="alert"></p>
+      <ul class="list" id="blockList"></ul>
+
+      <h3>Hidden elements</h3>
+      <p class="lead">CSS selectors hidden on a given site. Create them quickly with “Block an element” in the toolbar popup.</p>
+      <form class="inline" id="selForm">
+        <input type="text" id="selSite" placeholder="site (example.com)" autocomplete="off" spellcheck="false" required>
+        <input type="text" id="selInput" placeholder="#banner-ad, .sponsored" autocomplete="off" spellcheck="false" required>
+        <button class="btn" type="submit">Add</button>
+      </form>
+      <p class="error" id="selError" role="alert"></p>
+      <ul class="list" id="selList"></ul>
+    </section>
+
+    <section id="tab-backup" class="tab">
+      <h2>Backup &amp; stats</h2>
+      <div class="cards">
+        <div class="card"><strong id="statTotal">0</strong><span>requests blocked</span></div>
+        <div class="card"><strong id="statSince">–</strong><span>counting since</span></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="exportBtn">Export settings</button>
+        <button class="btn" id="importBtn">Import settings</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <button class="btn ghost" id="resetStatsBtn">Reset counter</button>
+        <button class="btn danger" id="resetAllBtn">Reset everything</button>
+      </div>
+      <p class="ok" id="backupMsg" role="status"></p>
+    </section>
+
+    <section id="tab-about" class="tab">
+      <h2>About &amp; legal</h2>
+      <p>Summit Block is free, open-source software released under the MIT License. It collects no data, makes no network requests of its own and contains no analytics.</p>
+      <p>The full Privacy Policy, Terms of Service, Disclaimer and Third-Party Notices are in the <code>legal/</code> folder of the project and in the store listing.</p>
+      <ul class="plain">
+        <li>Settings and counters are stored only in your browser (<code>chrome.storage.local</code>).</li>
+        <li>Removing the extension deletes all of its data.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+<script type="module" src="options.js"></script>
+</body>
+</html>

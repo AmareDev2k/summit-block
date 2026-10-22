@@ -13,8 +13,8 @@
       <img src="../../assets/icons/icon-48.png" alt="" width="40" height="40">
       <div><h1>Summit Block</h1><span id="ver"></span></div>
     </div>
-    <nav id="nav">
-      <button data-tab="general" class="active">General</button>
+    <nav id="nav" aria-label="Settings sections">
+      <button data-tab="general" class="active" aria-current="page">General</button>
       <button data-tab="filters">Filter lists</button>
       <button data-tab="allowlist">Allowlist</button>
       <button data-tab="custom">My filters</button>
@@ -24,24 +24,24 @@
   </aside>
 
   <main>
-    <section id="tab-general" class="tab active">
-      <h2>General</h2>
+    <section id="tab-general" class="tab active" aria-labelledby="general-heading">
+      <h2 id="general-heading">General</h2>
       <label class="row"><div><strong>Enable Summit Block</strong><p>Master switch for all blocking.</p></div><input type="checkbox" class="switch" data-key="enabled"></label>
       <label class="row"><div><strong>Hide ad containers</strong><p>Removes empty ad boxes and placeholders left behind after blocking.</p></div><input type="checkbox" class="switch" data-key="cosmetic"></label>
       <label class="row"><div><strong>Hide annoyances</strong><p>Cookie banners and newsletter pop-ups. Hiding a banner does not accept or reject cookies for you.</p></div><input type="checkbox" class="switch" data-key="annoyances"></label>
       <label class="row"><div><strong>Skip YouTube video ads <span class="tag">experimental</span></strong><p>Clicks “Skip” and fast-forwards ads. May stop working whenever YouTube changes its player and may be against YouTube’s terms – use at your own risk.</p></div><input type="checkbox" class="switch" data-key="youtube"></label>
     </section>
 
-    <section id="tab-filters" class="tab">
-      <h2>Filter lists</h2>
+    <section id="tab-filters" class="tab" aria-labelledby="filters-heading" hidden>
+      <h2 id="filters-heading">Filter lists</h2>
       <p class="lead">Built-in lists compiled into Chrome’s native blocking engine. Nothing is downloaded at runtime.</p>
       <label class="row"><div><strong>Ads &amp; popups</strong><p><span data-count="ads">…</span> rules · ad networks, ad servers, pop-under networks</p></div><input type="checkbox" class="switch" data-key="rulesets.ads"></label>
       <label class="row"><div><strong>Trackers &amp; analytics</strong><p><span data-count="trackers">…</span> rules · cross-site trackers, session recorders, fingerprinting scripts</p></div><input type="checkbox" class="switch" data-key="rulesets.trackers"></label>
       <label class="row"><div><strong>Malware &amp; crypto-miners</strong><p><span data-count="malware">…</span> rules · in-browser miners and known malicious hosts</p></div><input type="checkbox" class="switch" data-key="rulesets.malware"></label>
     </section>
 
-    <section id="tab-allowlist" class="tab">
-      <h2>Allowlist</h2>
+    <section id="tab-allowlist" class="tab" aria-labelledby="allowlist-heading" hidden>
+      <h2 id="allowlist-heading">Allowlist</h2>
       <p class="lead">Blocking is paused on these sites (and their subdomains). Reload the site after changing this list.</p>
       <form class="inline" id="allowForm">
         <input type="text" id="allowInput" placeholder="example.com" autocomplete="off" spellcheck="false" required>
@@ -51,8 +51,8 @@
       <ul class="list" id="allowList"></ul>
     </section>
 
-    <section id="tab-custom" class="tab">
-      <h2>My filters</h2>
+    <section id="tab-custom" class="tab" aria-labelledby="custom-heading" hidden>
+      <h2 id="custom-heading">My filters</h2>
       <h3>Blocked domains</h3>
       <p class="lead">Every request to these domains (and subdomains) is blocked on all sites.</p>
       <form class="inline" id="blockForm">
@@ -73,8 +73,8 @@
       <ul class="list" id="selList"></ul>
     </section>
 
-    <section id="tab-backup" class="tab">
-      <h2>Backup &amp; stats</h2>
+    <section id="tab-backup" class="tab" aria-labelledby="backup-heading" hidden>
+      <h2 id="backup-heading">Backup &amp; stats</h2>
       <div class="cards">
         <div class="card"><strong id="statTotal">0</strong><span>requests blocked</span></div>
         <div class="card"><strong id="statSince">–</strong><span>counting since</span></div>
@@ -89,8 +89,8 @@
       <p class="ok" id="backupMsg" role="status"></p>
     </section>
 
-    <section id="tab-about" class="tab">
-      <h2>About &amp; legal</h2>
+    <section id="tab-about" class="tab" aria-labelledby="about-heading" hidden>
+      <h2 id="about-heading">About &amp; legal</h2>
       <p>Summit Block is free, open-source software released under the MIT License. It collects no data, makes no network requests of its own and contains no analytics.</p>
       <p>The full Privacy Policy, Terms of Service, Disclaimer and Third-Party Notices are in the <code>legal/</code> folder of the project and in the store listing.</p>
       <ul class="plain">

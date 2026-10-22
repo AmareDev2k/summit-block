@@ -1,0 +1,80 @@
+{
+  "_comment": "Selectors hidden with display:none. 'generic' runs everywhere, 'sites' only on the listed domain (and subdomains), 'annoyances' only when the user enables it.",
+  "generic": [
+    ".adsbygoogle",
+    "ins.adsbygoogle",
+    "amp-ad",
+    "amp-embed[type='taboola']",
+    "[id^='google_ads_iframe']",
+    "[id^='google_ads_div']",
+    "[id^='div-gpt-ad']",
+    "[data-ad-slot]",
+    "[data-google-query-id]",
+    "iframe[src*='doubleclick.net']",
+    "iframe[src*='googlesyndication.com']",
+    "iframe[src*='adnxs.com']",
+    "iframe[id^='google_ads']",
+    "a[href*='doubleclick.net/']",
+    "a[href*='googleadservices.com/']",
+    "a[href^='https://adclick.g.doubleclick.net']",
+    ".advertisement",
+    ".advertisements",
+    ".ad-banner",
+    ".ad-slot",
+    ".ad-container",
+    ".ad-wrapper",
+    ".ads-banner",
+    ".sponsored-ad",
+    ".sponsored-links",
+    "#ad-banner",
+    "#ad-container",
+    "#advertisement",
+    "div[id^='taboola-']",
+    ".trc_related_container",
+    ".OUTBRAIN",
+    "[data-widget-id^='outbrain']",
+    "div[id^='mgid']",
+    ".mgid_3x2",
+    "[aria-label='advertisement' i]",
+    "[aria-label='Advertisement' i]"
+  ],
+  "sites": {
+    "youtube.com": [
+      "#masthead-ad",
+      "#player-ads",
+      "ytd-ad-slot-renderer",
+      "ytd-display-ad-renderer",
+      "ytd-in-feed-ad-layout-renderer",
+      "ytd-promoted-sparkles-web-renderer",
+      "ytd-promoted-video-renderer",
+      "ytd-banner-promo-renderer",
+      ".ytp-ad-overlay-container"
+    ],
+    "google.com": [
+      "#tads",
+      "#tadsb",
+      "#bottomads",
+      "div[data-text-ad]"
+    ],
+    "reddit.com": [
+      "shreddit-ad-post",
+      ".promotedlink"
+    ]
+  },
+  "annoyances": [
+    "#onetrust-banner-sdk",
+    "#onetrust-consent-sdk",
+    "#CybotCookiebotDialog",
+    ".fc-consent-root",
+    ".cc-window",
+    ".cookie-banner",
+    "#cookie-banner",
+    ".cookie-notice",
+    "#cookieNotice",
+    "#cookie-consent",
+    ".cookie-consent",
+    ".newsletter-popup",
+    ".newsletter-modal",
+    "#newsletter-popup"
+  ]
+}

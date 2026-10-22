@@ -1,6 +1,6 @@
 {
   "name": "summit-block",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fast, private, open-source ad & tracker blocker for Chrome (Manifest V3).",
   "private": true,
   "type": "module",

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Summit Block – Ad & Tracker Blocker",
   "short_name": "Summit Block",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fast, private, open-source ad and tracker blocker. Blocks ads, trackers, malware domains and annoying page elements. Zero data collection.",
   "minimum_chrome_version": "114",
   "icons": {

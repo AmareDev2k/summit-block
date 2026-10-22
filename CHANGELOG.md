@@ -3,6 +3,18 @@
 All notable changes are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] – 2026-10-22
+
+### Added
+- Support links for GitHub, Patreon and Buy Me a Coffee in the popup and settings page.
+- System-aware dark mode with a manual light/dark toggle.
+- Persisted theme preference in local extension storage.
+- Accessible settings tab state with `aria-current` and hidden inactive panels.
+
+### Changed
+- Refined popup and settings page styling with a cleaner neutral interface.
+- Improved mobile layout, focus states and control feedback.
+
 ## [1.0.0] – 2026-10-22
 
 ### Added

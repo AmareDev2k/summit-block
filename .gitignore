@@ -8,3 +8,7 @@ Thumbs.db
 .vscode/
 .idea/
 _metadata/
+.agents/
+.claude/
+.grok/
+skills-lock.json

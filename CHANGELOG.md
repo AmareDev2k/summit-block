@@ -3,6 +3,18 @@
 All notable changes are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] – 2026-10-22
+
+### Added
+- Auto-skip YouTube video ads and annoyance/cookie modal blocking enabled by default in settings.
+- Enhanced YouTube video ad skipper with modern DOM selectors, instant audio mute, rapid forward, and anti-adblock modal auto-dismissal.
+- High-volume popup, popunder, and interstitial ad networks added to built-in rulesets (`filters/ads.txt`).
+- Cosmetic selectors for overlay and floating modal ads on web pages.
+- Auto-migration in background service worker enabling YouTube skipping and annoyances for existing installs.
+- Ported uBlock Origin scriptlet defusers (`src/content/defuser.js` in `world: MAIN`) for popunder neutralization, fake In-Page Push dialog sweeps, unsolicited background navigation aborts, and automated malware `.reg` download interception.
+- Expanded malware & infostealer domain protection to 2,778 domains (`filters/malware.txt`) extracted from uBlock Origin badware assets.
+- Integrated YouTube player experiment machine defuser (`ytcfg.EXPERIMENT_FLAGS.all_web_enable_network_machine = false`) from uBlock Origin quick-fixes.
+
 ## [1.1.0] – 2026-10-22
 
 ### Added

@@ -48,7 +48,7 @@ test('sanitizeSettings cleans imported data', () => {
     __proto__: { polluted: true }
   });
   assert.equal(s.enabled, false);
-  assert.equal(s.youtube, false);
+  assert.equal(s.youtube, true);
   assert.deepEqual(s.rulesets, { ads: false, trackers: true, malware: true });
   assert.deepEqual(s.whitelist, ['foo.com']);
   assert.deepEqual(s.customBlockDomains, ['ads.bar.net']);

@@ -8,8 +8,8 @@ export const DEFAULT_SETTINGS = Object.freeze({
   enabled: true,
   rulesets: { ads: true, trackers: true, malware: true },
   cosmetic: true,        // hide ad containers with CSS
-  annoyances: false,     // cookie banners, newsletter pop-ups
-  youtube: false,        // auto-skip YouTube video ads (experimental)
+  annoyances: true,      // cookie banners, newsletter pop-ups
+  youtube: true,         // auto-skip YouTube video ads (experimental)
   theme: 'system',      // system, light or dark
   whitelist: [],         // sites where blocking is paused
   customBlockDomains: [],

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Summit Block – Ad & Tracker Blocker",
   "short_name": "Summit Block",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Fast, private, open-source ad and tracker blocker. Blocks ads, trackers, malware domains and annoying page elements. Zero data collection.",
   "minimum_chrome_version": "114",
   "icons": {
@@ -40,6 +40,14 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "js": ["src/content/defuser.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": ["<all_urls>"],
       "js": ["src/content/cosmetic.js"],
       "run_at": "document_start",
       "all_frames": true,
@@ -48,7 +56,7 @@
     {
       "matches": ["*://*.youtube.com/*"],
       "js": ["src/content/youtube.js"],
-      "run_at": "document_idle"
+      "run_at": "document_start"
     }
   ],
   "declarative_net_request": {

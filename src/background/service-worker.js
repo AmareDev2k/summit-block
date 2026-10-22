@@ -107,9 +107,24 @@ function createMenus() {
   });
 }
 
-chrome.runtime.onInstalled.addListener(async () => {
+chrome.runtime.onInstalled.addListener(async (details) => {
   const { settings, stats } = await chrome.storage.local.get(['settings', 'stats']);
-  if (!settings) await chrome.storage.local.set({ settings: structuredClone(DEFAULT_SETTINGS) });
+  if (!settings) {
+    await chrome.storage.local.set({ settings: structuredClone(DEFAULT_SETTINGS) });
+  } else if (details?.reason === 'update' || details?.reason === 'install') {
+    let changed = false;
+    if (settings.youtube === false) {
+      settings.youtube = true;
+      changed = true;
+    }
+    if (settings.annoyances === false) {
+      settings.annoyances = true;
+      changed = true;
+    }
+    if (changed) {
+      await chrome.storage.local.set({ settings });
+    }
+  }
   if (!stats) await chrome.storage.local.set({ stats: defaultStats() });
   createMenus();
   await applyAll();

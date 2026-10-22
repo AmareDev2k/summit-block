@@ -12,3 +12,5 @@ _metadata/
 .claude/
 .grok/
 skills-lock.json
+
+ex/

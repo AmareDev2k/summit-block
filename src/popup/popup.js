@@ -8,10 +8,23 @@ let tab = null;
 let host = null;
 let settings = null;
 
+function applyTheme(theme) {
+  const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  $('themeToggle').textContent = dark ? 'Light mode' : 'Dark mode';
+  $('themeToggle').setAttribute('aria-pressed', String(dark));
+}
+
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', async () => {
+  settings = await getSettings();
+  if (settings.theme === 'system') applyTheme(settings.theme);
+});
+
 async function init() {
   [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   host = getHostname(tab?.url || '');
   settings = await getSettings();
+  applyTheme(settings.theme);
   $('ver').textContent = chrome.runtime.getManifest().version;
   await render();
   bind();
@@ -74,6 +87,10 @@ function bind() {
   });
 
   $('options').addEventListener('click', () => chrome.runtime.openOptionsPage());
+  $('themeToggle').addEventListener('click', async () => {
+    settings = await updateSettings((s) => { s.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; });
+    applyTheme(settings.theme);
+  });
 
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area !== 'local') return;

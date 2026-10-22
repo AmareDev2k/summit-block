@@ -1,0 +1,72 @@
+! Summit Block – ads.txt
+! Ad networks, ad exchanges, ad servers and pop-under networks.
+! Format: one rule per line. See docs/FILTERS.md.
+!   ||domain.tld^                  block domain + all subdomains
+!   ||domain.tld^$third-party      only when loaded from a different site
+!   ||domain.tld/path/             block a specific URL prefix
+!   ! comment
+
+||doubleclick.net^
+||googlesyndication.com^
+||googleadservices.com^
+||adservice.google.com^
+||2mdn.net^
+||adnxs.com^
+||adsrvr.org^
+||advertising.com^
+||adform.net^
+||rubiconproject.com^
+||pubmatic.com^
+||openx.net^
+||casalemedia.com^
+||criteo.com^
+||criteo.net^
+||taboola.com^
+||outbrain.com^
+||revcontent.com^
+||mgid.com^
+||media.net^
+||amazon-adsystem.com^
+||smartadserver.com^
+||33across.com^
+||bidswitch.net^
+||contextweb.com^
+||lijit.com^
+||sovrn.com^
+||sharethrough.com^
+||teads.tv^
+||moatads.com^
+||adsafeprotected.com^
+||serving-sys.com^
+||zedo.com^
+||yieldmo.com^
+||triplelift.com^
+||indexww.com^
+||gumgum.com^
+||spotx.tv^
+||spotxchat.com^
+||stickyadstv.com^
+||undertone.com^
+||tribalfusion.com^
+||yieldlab.net^
+||adition.com^
+||adtech.de^
+||adtechus.com^
+||onetag-sys.com^
+||ads.yahoo.com^
+||ads.linkedin.com^
+||ads-twitter.com^
+||adcolony.com^
+||exoclick.com^
+||propellerads.com^
+||popads.net^
+||popcash.net^
+||adsterra.com^
+||juicyads.com^
+||clickadu.com^
+||hilltopads.net^
+||adblade.com^
+||adroll.com^
+||adthrive.com^
+||ay.delivery^
+||connatix.com^
